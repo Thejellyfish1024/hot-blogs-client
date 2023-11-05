@@ -22,18 +22,18 @@ const AddBlog = () => {
                     <div className="md:flex gap-12">
                         <div className="md:w-1/2">
                             <p className="text-xl font-semibold my-3">Blog Title</p>
-                            <input type="text" name="title" placeholder="Title" required className="input w-4/5 input-bordered input-primary " />
+                            <input type="text" name="title" placeholder="Title" required className="input bg-black text-white w-full lg:w-4/5 input-bordered input-primary " />
                         </div>
                         <div className="md:w-1/2">
                             <p className="text-xl font-semibold my-3">Image Link</p>
-                            <input type="text" name="img" required placeholder="Url" className="input input-bordered input-accent w-4/5" />
+                            <input type="text" name="img" required placeholder="Url" className="input text-white bg-black input-bordered input-accent w-full lg:w-4/5" />
                         </div>
                     </div>
                     {/*  */}
                     <div className="md:flex gap-12">
                         <div className="md:w-1/2">
                             <p className="text-xl font-semibold my-3">Category</p>
-                            <select name="category" className=" w-4/5 border border-purple-500 rounded-md p-3 font-bold " id="">
+                            <select name="category" className=" w-full lg:w-4/5 border border-purple-500 rounded-md p-3 bg-black text-white lg:font-bold font-medium " id="">
                                 <option value="Travel">Travel</option>
                                 <option value="Travel">Food and Cooking</option>
                                 <option value="Travel">Lifestyle and Personal Development</option>
@@ -44,7 +44,9 @@ const AddBlog = () => {
                         </div>
                         <div className="md:w-1/2">
                             <p className="text-xl font-semibold my-3">Short Description</p>
-                            <textarea name="short_description" className="textarea textarea-secondary w-4/5 h-20" required placeholder="Short description"></textarea>
+                            <textarea name="short_description" className="textarea textarea-secondary w-full 
+                            lg:w-4/5 h-20 bg-black text-white" required placeholder="Short description">
+                            </textarea>
                         </div>
                     </div>
                     {/*  */}
@@ -52,7 +54,7 @@ const AddBlog = () => {
 
                     <div className="md:w-1/2">
                         <p className="text-xl font-semibold my-3">Long Description</p>
-                        <textarea name="long_description" className="textarea textarea-primary w-4/5 h-40" required placeholder="Long description"></textarea>
+                        <textarea name="long_description" className="textarea textarea-primary w-full lg:w-4/5 h-40 bg-black text-white" required placeholder="Long description"></textarea>
                     </div>
                     <button className="btn btn-success text-xl font-bold mt-5">
                         <input type="submit" value="Add Blog" />
