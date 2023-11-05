@@ -1,9 +1,10 @@
 
 
+
 const Home = () => {
     return (
         <div>
-            <div>Hello world!</div>
+            this is home
         </div>
     );
 };
