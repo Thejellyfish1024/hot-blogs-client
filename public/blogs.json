@@ -5,118 +5,118 @@
       "short_description": "Discover the beauty of the City of Light.",
       "long_description": "Explore the enchanting streets of Paris, visit iconic landmarks like the Eiffel Tower, and savor exquisite French cuisine. This guide will help you make the most of your trip to Paris.",
       "posted_time": 1699171156333,
-      "category": "Travel"
+      "category": "travel"
     },
     {
       "title": "Adventures in the Amazon Rainforest",
-      "img": "amazon.jpg",
+      "img": "https://media.istockphoto.com/id/172444323/photo/dreams.jpg?s=612x612&w=0&k=20&c=GABvMLtLN7n6au7ASD0cWTCQT1VYgXDDmE5MeGphGf8=",
       "short_description": "Immerse yourself in the heart of the Amazon.",
       "long_description": "Embark on a thrilling journey through the Amazon Rainforest. Encounter diverse wildlife, witness the lush greenery, and experience the rich culture of the indigenous people.",
       "posted_time": 1699171156456,
-      "category": "Travel"
+      "category": "travel"
     },
     {
       "title": "A Guide to Backpacking Through Southeast Asia",
-      "img": "southeast_asia.jpg",
+      "img": "https://media.istockphoto.com/id/598215096/photo/friends-hiking-in-the-mountain.webp?b=1&s=170667a&w=0&k=20&c=KBSPA5wzkMEWoW3_IV2NZKwFIXuWfyNZMISGXxbkX0c=",
       "short_description": "Discover the magic of Southeast Asia on a budget.",
       "long_description": "Learn how to explore the beauty of Southeast Asia without breaking the bank. This guide covers budget-friendly travel tips, hidden gems, and cultural experiences.",
       "posted_time": 1699171156375,
-      "category": "Travel"
+      "category": "travel"
     },
     {
       "title": "Delicious Homemade Pizza Recipes",
-      "img": "pizza.jpg",
+      "img": "https://img.freepik.com/free-photo/freshly-italian-pizza-with-mozzarella-cheese-slice-generative-ai_188544-12347.jpg",
       "short_description": "Master the art of making mouthwatering pizzas at home.",
       "long_description": "From classic Margherita to creative toppings, these pizza recipes will turn you into a pizza chef. Learn the secrets of perfect dough and savory sauces.",
       "posted_time": 1699171156387,
-      "category": "Food and Cooking"
+      "category": "food"
     },
     {
       "title": "Sushi Perfection: A Step-by-Step Guide",
-      "img": "sushi.jpg",
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxhjisTOB0BEpn5ZiGQTXZ58aMmBK81sL1igQCsiRPvT4tqinAmMQey2V8vb9HYDW3Bw8&usqp=CAU",
       "short_description": "Create beautiful sushi rolls in your kitchen.",
       "long_description": "Discover the art of making sushi with our detailed guide. Learn how to prepare sushi rice, roll perfect maki, and enjoy homemade sushi like a pro.",
       "posted_time": 169917115674,
-      "category": "Food and Cooking"
+      "category": "food"
     },
     {
       "title": "Exploring Italian Cuisine: Pasta Galore",
-      "img": "pasta.jpg",
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcrm1HP-0xHiP4DO9uvhrXgQ7l_yJQv52sVAvGHeCeTyak83bliQUDDS6dTnuqW9mt7q8&usqp=CAU",
       "short_description": "Indulge in the flavors of Italy with pasta dishes.",
       "long_description": "Take a culinary journey through Italy with a focus on pasta. From creamy carbonara to hearty lasagna, discover the richness and diversity of Italian pasta dishes.",
       "posted_time": 169917115680,
-      "category": "Food and Cooking"
+      "category": "food"
     },
     {
       "title": "Mastering Time Management for a Productive Life",
-      "img": "time_management.jpg",
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfpP76y2kqQfdVLhggXBWsqIOm4hhpmciT5CAazAuUlgN74Pvf889lYGblghflnVbJ9l4&usqp=CAU",
       "short_description": "Unlock the secrets to effective time management.",
       "long_description": "Learn how to prioritize tasks, avoid procrastination, and create a schedule that maximizes productivity. Time management is the key to a balanced life.",
       "posted_time": 1699171156201,
-      "category": "Lifestyle and Personal Development"
+      "category": "lifestyle"
     },
     {
       "title": "The Art of Mindfulness and Stress Reduction",
-      "img": "mindfulness.jpg",
+      "img": "https://w0.peakpx.com/wallpaper/492/192/HD-wallpaper-morning-run-healthy-lifestyle-morning-runners-athlete-running.jpg",
       "short_description": "Discover peace and serenity through mindfulness.",
       "long_description": "Explore mindfulness techniques to reduce stress, improve mental clarity, and find inner peace. Incorporate mindfulness into your daily life for a happier you.",
       "posted_time": 1699171156750,
-      "category": "Lifestyle and Personal Development"
+      "category": "lifestyle"
     },
     {
       "title": "Building Healthy Habits: A 30-Day Challenge",
-      "img": "healthy_habits.jpg",
+      "img": "https://media.istockphoto.com/id/1157104804/photo/lifestyle-of-student-are-reading-textbook-at-coffee-shop.webp?b=1&s=170667a&w=0&k=20&c=BXjV-MaIXD6c9NPn2iPW8psNpLTcSqlLihrM-in7OBQ=",
       "short_description": "Transform your life with positive habits.",
       "long_description": "Join our 30-day challenge to develop and maintain healthy habits. From exercise routines to dietary choices, this journey will change your life for the better.",
       "posted_time": 1699171156120,
-      "category": "Lifestyle and Personal Development"
+      "category": "lifestyle"
     },
     {
       "title": "The Latest Smartphone Innovations",
-      "img": "smartphone.jpg",
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcAGjHtF_kp0jCxT-aaSG5SFe591KCjP79Lw&usqp=CAU",
       "short_description": "Stay up to date with cutting-edge smartphones.",
       "long_description": "Explore the newest features and advancements in the world of smartphones. From improved cameras to 5G connectivity, discover the future of mobile technology.",
       "posted_time": 1699171156111,
-      "category": "Technology and Gadgets"
+      "category": "technology"
     },
     {
       "title": "Gaming Revolution: Next-Gen Consoles and Titles",
-      "img": "gaming.jpg",
+      "img": "https://media.istockphoto.com/id/1396079593/photo/gamepad-and-headphones-with-copy-space-3d-render.webp?b=1&s=170667a&w=0&k=20&c=lbAiDY30FPb1jDUjGtO6X0tHpt7_DqtnASBrCBaNDxo=",
       "short_description": "Dive into the world of gaming innovation.",
       "long_description": "Get the inside scoop on the latest gaming consoles, titles, and trends. Whether you're a casual gamer or a hardcore enthusiast, this is your ultimate gaming hub.",
       "posted_time": 1699171156888,
-      "category": "Technology and Gadgets"
+      "category": "technology"
     },
     {
       "title": "The Power of Artificial Intelligence: A Closer Look",
-      "img": "ai.jpg",
+      "img": "https://img.freepik.com/premium-photo/automation-data-analytic-with-robot-digital-visualization-big-data-scientist_493806-15023.jpg",
       "short_description": "Explore the impact of AI on our lives.",
       "long_description": "Delve into the world of artificial intelligence and understand its applications, benefits, and potential challenges. AI is shaping the future, and you can be part of it.",
       "posted_time": 1699171156123,
-      "category": "Technology and Gadgets"
+      "category": "technology"
     },
     {
       "title": "Smart Investment Strategies for Beginners",
-      "img": "investment.jpg",
+      "img": "https://img.freepik.com/premium-photo/growth-money-arrow-success-financial-business-coin-concept-investment-earnings-background-with-profit-graph-finance-development-increase-economic-market-chart-digital-stock-currency-strategy_79161-2472.jpg",
       "short_description": "Start your journey to financial success.",
       "long_description": "If you're new to investing, this guide will walk you through the basics. Learn how to create a diversified portfolio and make informed investment decisions.",
       "posted_time": 1699171156444,
-      "category": "Finance and Money Management"
+      "category": "finance"
     },
     {
       "title": "Frugal Living: Saving Money Without Sacrifice",
-      "img": "frugal_living.jpg",
+      "img": "https://media.istockphoto.com/id/1211268750/photo/saving-money-concept-asian-man-hand-putting-coin-write-cost-and-finance-expenses-calculator.jpg?s=612x612&w=0&k=20&c=-cC-D9L4yajrcrkgYgWVQEz49lUQefQsa7Xydki7Sbg=",
       "short_description": "Discover the art of frugality and financial freedom.",
       "long_description": "Explore practical ways to save money, cut expenses, and build a secure financial future while still enjoying the things you love.",
       "posted_time": 1699171156000,
-      "category": "Finance and Money Management"
+      "category": "finance"
     },
     {
       "title": "Investing in Real Estate: A Comprehensive Guide",
-      "img": "real_estate.jpg",
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzLxmfsSWMjz3_EFc73CCeis_GSFCzC_0S7ck2bQkHDCr0XqBrt-6p-vQs-9HKND9KGh8&usqp=CAU",
       "short_description": "Explore the world of real estate investment.",
       "long_description": "Learn the ins and outs of investing in real estate, from rental properties to commercial spaces. This guide will help you navigate the real estate market successfully.",
       "posted_time": 1699171156012,
-      "category": "Finance and Money Management"
+      "category": "finance"
     }
 ]
