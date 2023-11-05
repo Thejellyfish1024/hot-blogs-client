@@ -10,7 +10,7 @@ const Root = () => {
             <li><a>Add Blog</a></li>
         </NavLink>
         <NavLink to="/allBlogs" className={({ isActive }) => isActive ? "text-red-500 text-lg md:text-xl font-bold" : "text-lg md:text-xl font-semibold"} >
-            <li><a>All blogs</a></li>
+            <li><a>All Blogs</a></li>
         </NavLink>
         <NavLink to="/featuredBlogs" className={({ isActive }) => isActive ? "text-red-500 text-lg md:text-xl font-bold" : "text-lg md:text-xl font-semibold"} >
             <li><a>Featured Blogs</a></li>
