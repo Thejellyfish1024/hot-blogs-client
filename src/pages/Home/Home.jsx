@@ -1,14 +1,16 @@
 
 import Banner from "./Banner";
+import RecentBlogs from "./RecentBlogs";
 
 
 
 const Home = () => {
-    // const date = new Date().valueOf()
-    // console.log(date);
+    
+   
     return (
         <div>
             <Banner></Banner>
+            <RecentBlogs></RecentBlogs>
         </div>
     );
 };
