@@ -16,7 +16,7 @@ const Root = () => {
         <NavLink to="/featuredBlogs" className={({ isActive }) => isActive ? "text-red-500 text-lg md:text-xl font-bold" : "text-lg md:text-xl font-semibold"} >
             <li><a>Featured Blogs</a></li>
         </NavLink>
-        <NavLink to="/allBlogs" className={({ isActive }) => isActive ? "text-red-500 text-lg md:text-xl font-bold" : "text-lg md:text-xl font-semibold"} >
+        <NavLink to="/wishlist" className={({ isActive }) => isActive ? "text-red-500 text-lg md:text-xl font-bold" : "text-lg md:text-xl font-semibold"} >
             <li><a>Wishlist</a></li>
         </NavLink>
     </>

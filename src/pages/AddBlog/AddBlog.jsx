@@ -12,7 +12,7 @@ const AddBlog = () => {
         const form = e.target;
         const title = form.title.value;
         const img = form.img.value;
-        const category = form.category.value;
+        const category = form.category.value.toLowerCase();
         const short_description = form.short_description.value;
         const long_description = form.long_description.value;
         const posted_time = new Date().valueOf();

@@ -1,9 +1,40 @@
 /* eslint-disable react/prop-types */
 
+import { useContext } from "react";
+import { AuthContext } from "../../provider/AuthProvider";
+import Swal from "sweetalert2";
+
 // https://i.ibb.co/Z6m1KgZ/travel1.webp
 
 const SingleBlog = ({ blog }) => {
     const { title, img, short_description } = blog
+    const {user} = useContext(AuthContext)
+
+    const handleWishlist = (blog) =>{
+
+        const email = user?.email;
+        const myWishlist = {...blog, email}
+        
+        console.log(myWishlist);
+        fetch('http://localhost:5000/wishlist', {
+            method:'POST',
+            headers:{
+                'content-type' : 'application/json'
+            },
+            body:JSON.stringify(myWishlist)
+        })
+        .then(res => res.json())
+        .then(data =>{
+            console.log(data);
+            if(data?.acknowledged){
+                Swal.fire({
+                    title: 'Successfully Added to Wishlist!',
+                    icon: 'success',
+                    confirmButtonText: 'Close'
+                  })
+            }
+        })
+    }
     return (
         <div>
             <div className=" flex flex-col lg:w-96 w-80 lg:h-[60vh] md:h-[75vh] bg-base-300 rounded-lg">
@@ -19,7 +50,7 @@ const SingleBlog = ({ blog }) => {
                     </div>
                     <div className="mt-5 lg:mt-0 card-actions justify-end">
                         <div className="badge badge-outline font-bold p-5 text-[#FF3811] hover:text-white hover:bg-black">Details</div>
-                        <div className="badge badge-outline font-bold p-5 text-[#FF3811] hover:text-white hover:bg-black">Wishlist</div>
+                        <div onClick={() => handleWishlist(blog)} className="badge badge-outline font-bold p-5 text-[#FF3811] hover:text-white hover:bg-black">Wishlist</div>
                     </div>
                 </div>
             </div>
