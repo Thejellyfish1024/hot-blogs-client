@@ -25,8 +25,6 @@ const Register = () => {
         
         console.log(name,url,email,password);
 
-        // ^(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*()_+{}\[\]:;<>,.?~\\/\|]).{6,}$
-
 
         if(!/^(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*()_+{}\[\]:;<>,.?~\\/\|]).{6,}$/.test(password)){
             return toast.error('Password have to be minimum 6 characters . It should include capital letter and special character')

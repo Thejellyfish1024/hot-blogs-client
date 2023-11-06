@@ -4,9 +4,46 @@ import { CiLock } from 'react-icons/ci';
 import { SlPeople } from 'react-icons/sl';
 import { FcGoogle } from 'react-icons/fc';
 import loginImg from '../../assets/user-login.gif'
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { useContext } from 'react';
+import { AuthContext } from '../../provider/AuthProvider';
+import toast from 'react-hot-toast';
 
 const Login = () => {
+
+    const { signInUser , googleSignIn} = useContext(AuthContext)
+    const location = useLocation();
+    const navigate = useNavigate();
+
+
+    const handleLogin = e => {
+        e.preventDefault();
+        const email = e.target.email.value;
+        const password = e.target.password.value;
+        console.log(email, password);
+        signInUser(email, password)
+            .then(result => {
+                console.log(result.user);
+                toast.success('Successfully Logged In!!')
+                navigate(location?.state ? location.state : '/')
+            })
+            .catch(error => {
+                console.log(error);
+                toast.error(error.message)
+            })
+    }
+    const handleGoogle = () => {
+        googleSignIn()
+            .then(result => {
+                console.log(result.user);
+                toast.success('Successfully Logged In!!')
+                navigate(location?.state ? location.state : '/')
+            })
+            .catch(error => {
+                console.log(error);
+                toast.error(error.message)
+            })
+    }
     return (
         <div className="bg-gradient-to-r from-cyan-300 to-blue-500 min-h-screen min-w-screen">
 
@@ -14,7 +51,7 @@ const Login = () => {
             <div className="w-full h-full flex flex-row-reverse justify-center items-center ">
                 {/* login from */}
                 <div className="w-1/2 ">
-                    <form className='w-4/5'>
+                    <form onSubmit={handleLogin} className='w-4/5'>
                         <div className='flex justify-center my-5'>
                             <SlPeople className='text-9xl'></SlPeople>
                         </div>
@@ -35,7 +72,7 @@ const Login = () => {
                         </div>
                     </form>
                     <div className='w-4/5 flex justify-center mt-8'>
-                        <button className='btn btn-outline font-bold w-4/5 bg-gradient-to-r from-blue-400 to-cyan-500 '>
+                        <button onClick={handleGoogle} className='btn btn-outline font-bold w-4/5 bg-gradient-to-r from-blue-400 to-cyan-500 '>
                             <FcGoogle className='text-2xl'></FcGoogle>
                             Continue with Google</button>
                     </div>
