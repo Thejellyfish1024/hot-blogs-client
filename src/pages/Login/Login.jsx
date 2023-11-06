@@ -6,12 +6,12 @@ import { FcGoogle } from 'react-icons/fc';
 import loginImg from '../../assets/user-login.gif'
 import { Link } from 'react-router-dom';
 
-
 const Login = () => {
     return (
         <div className="bg-gradient-to-r from-cyan-300 to-blue-500 min-h-screen min-w-screen">
+
             <h2 className='text-6xl text-fuchsia-600 font-bold text-center pt-10 mb-16'>Login Now</h2>
-            <div className="w-full h-full flex flex-row-reverse justify-center items-center">
+            <div className="w-full h-full flex flex-row-reverse justify-center items-center ">
                 {/* login from */}
                 <div className="w-1/2 ">
                     <form className='w-4/5'>
@@ -40,9 +40,9 @@ const Login = () => {
                             Continue with Google</button>
                     </div>
                     <div className='text-lg font-medium text-center w-4/5 mt-4 '>
-                        <p>Don't have an account? 
+                        <p>Don't have an account?
                             <span className='text-red-500'><Link to='/register'> Register</Link></span>
-                            </p>
+                        </p>
                     </div>
                 </div>
 
