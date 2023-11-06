@@ -13,7 +13,7 @@ const provider = new GoogleAuthProvider();
 const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
-    const [displayName, setDisplayName] = useState(null);
+    // const [displayName, setDisplayName] = useState(null);
     const [photoURL, setPhotoURL] = useState(null);
 
     const createUser = (email, password) => {
@@ -43,15 +43,11 @@ const AuthProvider = ({ children }) => {
         const unSubscribe = onAuthStateChanged(auth, currentUser => {
             console.log('current user stat: ', currentUser);
             setLoading(false)
-            if (displayName) {
-               setUser(currentUser)
-             currentUser.displayName = displayName;
-                currentUser.photoURL = photoURL;
-            }
+            setUser(currentUser)
 
         })
         return () => unSubscribe();
-    }, [displayName, photoURL])
+    }, [])
 
     const authInfo = {
         user,
@@ -59,10 +55,8 @@ const AuthProvider = ({ children }) => {
         createUser,
         signInUser,
         logOut,
-        setDisplayName,
         setPhotoURL,
         photoURL,
-        displayName,
         googleSignIn,
         handleUpdateProfile
     }

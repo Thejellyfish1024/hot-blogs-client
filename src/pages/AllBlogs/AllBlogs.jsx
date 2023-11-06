@@ -20,7 +20,7 @@ const AllBlogs = () => {
     </>
 
     const { data, isLoading } = useBlogs(category);
-    console.log(data, isLoading);
+    // console.log(data, isLoading);
 
     useEffect(() => {
         setBlogs(data)
@@ -30,11 +30,11 @@ const AllBlogs = () => {
 
     const handleSearch = () => {
         const title = inputRef.current.value;
-        console.log(title);
+        // console.log(title);
         const searchedBlog = blogs?.find(blog => blog.title.toLowerCase() == title.toLowerCase())
         if (searchedBlog) {
             const singleArrBlog = [searchedBlog]
-            console.log(singleArrBlog);
+            // console.log(singleArrBlog);
             setBlogs(singleArrBlog)
         }
         else {

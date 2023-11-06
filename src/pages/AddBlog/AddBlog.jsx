@@ -1,6 +1,11 @@
+import { useContext } from "react";
+import { AuthContext } from "../../provider/AuthProvider";
+import Swal from "sweetalert2";
 
 
 const AddBlog = () => {
+
+    const {user} = useContext(AuthContext)
 
     const handleAddBlog = e => {
         e.preventDefault();
@@ -10,9 +15,34 @@ const AddBlog = () => {
         const category = form.category.value;
         const short_description = form.short_description.value;
         const long_description = form.long_description.value;
-        const posted_time = new Date().valueOf()
+        const posted_time = new Date().valueOf();
+        const email = user?.email;
 
-        console.log(posted_time, title, img, category, short_description, long_description);
+        
+        const newBlog = {
+            title, img, category, short_description, long_description, posted_time, email
+        }
+        console.log(newBlog);
+        fetch('http://localhost:5000/blogs',{
+            method: 'POST',
+            headers:{
+                'content-type' : 'application/json'
+            },
+            body:JSON.stringify(newBlog)
+        })
+        .then(res => res.json())
+        .then(data =>{
+            console.log(data)
+            if(data?.acknowledged)
+            {
+                Swal.fire({
+                    title: 'Successfully Added!',
+                    icon: 'success',
+                    confirmButtonText: 'Close'
+                  })
+                  form.reset();
+            }
+        })
     }
     return (
         <div className=" bg-[#FF3811] p-5">
@@ -26,7 +56,7 @@ const AddBlog = () => {
                         </div>
                         <div className="md:w-1/2">
                             <p className="text-xl font-semibold my-3">Image Link</p>
-                            <input type="text" name="img" required placeholder="Url" className="input text-white bg-black input-bordered input-accent w-full lg:w-4/5" />
+                            <input type="text" name="img" required placeholder="Url" className="input text-white bg-black input-bordered input-primary w-full lg:w-4/5" />
                         </div>
                     </div>
                     {/*  */}

@@ -10,7 +10,7 @@ const useBlogs = (url) => {
             return await data.json()
         }
     })
-    console.log(data,isLoading);
+    // console.log(data,isLoading);
     return {data, isLoading}
 };
 
