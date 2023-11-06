@@ -1,5 +1,5 @@
 /* eslint-disable react/no-unescaped-entities */
-import { AiOutlineMail } from 'react-icons/ai';
+import { AiOutlineMail,AiOutlineUserAdd,AiOutlineLink } from 'react-icons/ai';
 import { CiLock } from 'react-icons/ci';
 import { SlPeople } from 'react-icons/sl';
 // import loginImg from '../../assets/user-login.gif'
@@ -20,14 +20,14 @@ const Register = () => {
                         {/*  */}
                         <div className='flex items-center gap-4 bg-gray-300 w-full p-1 rounded-md'>
                             <div className='border-r-2 border-gray-600 px-3'>
-                                <AiOutlineMail className='text-3xl'></AiOutlineMail>
+                                <AiOutlineUserAdd className='text-3xl'></AiOutlineUserAdd>
                             </div>
                             <input type="text" name="Name" placeholder="Your Name" className="w-full p-3  bg-gray-300" />
                         </div>
                         {/*  */}
                         <div className='flex items-center mt-7 gap-4 bg-gray-300 w-full p-1 rounded-md'>
                             <div className='border-r-2 border-gray-600 px-3'>
-                                <AiOutlineMail className='text-3xl'></AiOutlineMail>
+                                <AiOutlineLink className='text-3xl'></AiOutlineLink>
                             </div>
                             <input type="text" name="url" placeholder="Image link" className="w-full p-3  bg-gray-300" />
                         </div>
