@@ -7,7 +7,7 @@ import { SlPeople } from 'react-icons/sl';
 // import loginImg from '../../assets/user-login.gif'
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../provider/AuthProvider';
-import toast, { Toaster } from 'react-hot-toast';
+import toast from 'react-hot-toast';
 
 
 const Register = () => {
@@ -25,8 +25,10 @@ const Register = () => {
         
         console.log(name,url,email,password);
 
+        // ^(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*()_+{}\[\]:;<>,.?~\\/\|]).{6,}$
 
-        if(!/^(?=.*[A-Z])(?=.*[!@#$%^&*()_+{}\[\]:;<>,.?~\\-]).{6,}$/.test(password)){
+
+        if(!/^(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*()_+{}\[\]:;<>,.?~\\/\|]).{6,}$/.test(password)){
             return toast.error('Password have to be minimum 6 characters . It should include capital letter and special character')
         }
 
@@ -97,13 +99,8 @@ const Register = () => {
                     </div>
                 </div>
 
-                {/* image */}
-                {/* <div className="w-1/2 flex justify-center">
-                    <img src={loginImg} className='w-3/5 rounded-lg' alt="" />
-                </div> */}
-
             </div>
-            <Toaster></Toaster>
+            
         </div>
     );
 };

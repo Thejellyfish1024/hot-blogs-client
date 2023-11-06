@@ -5,33 +5,40 @@ import AddBlog from "../pages/AddBlog/AddBlog";
 import AllBlogs from "../pages/AllBlogs/AllBlogs";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
+import MainRoot from "../root/MainRoot";
 
 export const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <Root></Root>,
-      children:[
-        {
-            path:"/",
-            element:<Home></Home>
-        },
-        {
-            path:"/addBlog",
-            element:<AddBlog></AddBlog>
-        },
-        {
-            path:"/allBlogs",
-            element:<AllBlogs></AllBlogs>,
-        },
-      ]
-    },
-    {
-      path:'/login',
-      element:<Login></Login>
-    },
-    {
-      path:'/register',
-      element:<Register></Register>
-    }
-  ]);
+  {
+    path: '/',
+    element: <MainRoot></MainRoot>,
+    children: [
+      {
+        path: "/",
+        element: <Root></Root>,
+        children: [
+          {
+            path: "/",
+            element: <Home></Home>
+          },
+          {
+            path: "/addBlog",
+            element: <AddBlog></AddBlog>
+          },
+          {
+            path: "/allBlogs",
+            element: <AllBlogs></AllBlogs>,
+          },
+        ]
+      },
+      {
+        path: '/login',
+        element: <Login></Login>
+      },
+      {
+        path: '/register',
+        element: <Register></Register>
+      }
+    ]
+  }
+]);
 
