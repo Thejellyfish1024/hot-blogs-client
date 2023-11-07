@@ -47,10 +47,10 @@ const Register = () => {
     }
     return (
         <div className="bg-gradient-to-r from-cyan-300 to-blue-500 min-h-screen min-w-screen">
-            <h2 className='text-6xl text-fuchsia-600 font-bold text-center pt-10 mb-16'>Register Now</h2>
+            <h2 className='md:text-6xl text-4xl text-fuchsia-600 font-bold text-center pt-10 mb-16'>Register Now</h2>
             <div className="w-full h-full flex flex-row-reverse justify-center items-center">
                 {/* login from */}
-                <div className="w-1/2">
+                <div className="md:w-1/2 w-3/4">
                     <form onSubmit={handleRegister}>
                         <div className='flex justify-center my-5'>
                             <SlPeople className='text-9xl'></SlPeople>

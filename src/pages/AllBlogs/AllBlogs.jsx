@@ -43,13 +43,8 @@ const AllBlogs = () => {
     }
 
 
-
-
-
-
-
     return (
-        <div className="max-w-7xl mx-auto my-10">
+        <div className="max-w-7xl mx-auto my-10 min-h-screen">
             <ul className="grid p-4 lg:grid-cols-6 grid-cols-3 text-center lg:text-lg lg:font-bold font-medium justify-center gap-5 ">
                 {categoryLinks}
             </ul>

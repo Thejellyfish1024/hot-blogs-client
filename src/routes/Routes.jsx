@@ -7,6 +7,7 @@ import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
 import MainRoot from "../root/MainRoot";
 import Wishlist from "../pages/Wishlist/Wishlist";
+import PrivateRoute from "./PrivateRoute";
 
 export const router = createBrowserRouter([
   {
@@ -31,7 +32,7 @@ export const router = createBrowserRouter([
           },
           {
             path:'/wishlist',
-            element:<Wishlist></Wishlist>
+            element:<PrivateRoute><Wishlist></Wishlist></PrivateRoute>
           }
         ]
       },

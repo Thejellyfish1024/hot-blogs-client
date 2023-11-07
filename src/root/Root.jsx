@@ -1,8 +1,13 @@
-import { Toaster } from "react-hot-toast";
+import toast, { Toaster } from "react-hot-toast";
 import { Link, NavLink, Outlet } from "react-router-dom";
 import Footer from "../shared/Footer";
+import { useContext } from "react";
+import { AuthContext } from "../provider/AuthProvider";
 
 const Root = () => {
+
+    const {user, logOut} = useContext(AuthContext)
+
 
     const navLinks = <>
         <NavLink to="/" className={({ isActive }) => isActive ? "text-red-500 text-lg md:text-xl font-bold " : "text-lg md:text-xl font-semibold"} >
@@ -45,7 +50,16 @@ const Root = () => {
                                     {navLinks}
                                 </ul>
                             </div>
-                            <div>
+                            {
+                                user ?
+                                <div>
+                                    <button onClick={() =>{
+                                        logOut();
+                                        toast.success('User logged out!!')
+                                    }} className=" btn btn-outline text-[#FF3811] btn-sm md:btn-md md:px-6 mr-3">Log Out</button>
+                                </div>
+                                :
+                                <div>
                                 <Link to='/login'>
                                     <button className=" btn btn-outline text-[#FF3811] btn-sm md:btn-md md:px-6 mr-3">Login</button>
                                 </Link>
@@ -53,6 +67,7 @@ const Root = () => {
                                     <button className=" btn btn-outline text-[#FF3811] btn-sm md:btn-md md:px-6">Register</button>
                                 </Link>
                             </div>
+                            }
                         </div>
                     </div>
 

@@ -1,4 +1,4 @@
-import React from 'react'
+// import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
 
@@ -13,11 +13,11 @@ const client = new QueryClient();
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <QueryClientProvider client={client}>
-      <AuthProvider>
+  <QueryClientProvider client={client}>
+    <AuthProvider>
+      {/* <React.StrictMode> */}
         <RouterProvider router={router} />
-      </AuthProvider>
-    </QueryClientProvider>
-  </React.StrictMode>,
+      {/* </React.StrictMode>, */}
+    </AuthProvider>
+  </QueryClientProvider>
 )
