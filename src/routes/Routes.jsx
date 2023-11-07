@@ -8,6 +8,7 @@ import Register from "../pages/Register/Register";
 import MainRoot from "../root/MainRoot";
 import Wishlist from "../pages/Wishlist/Wishlist";
 import PrivateRoute from "./PrivateRoute";
+import BlogDetails from "../pages/BlogDetails/BlogDetails";
 
 export const router = createBrowserRouter([
   {
@@ -33,6 +34,10 @@ export const router = createBrowserRouter([
           {
             path:'/wishlist',
             element:<PrivateRoute><Wishlist></Wishlist></PrivateRoute>
+          },
+          {
+            path:'/blogs/:id',
+            element:<BlogDetails></BlogDetails>
           }
         ]
       },

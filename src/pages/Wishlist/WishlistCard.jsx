@@ -46,7 +46,7 @@ const WishlistCard = ({ blog, refetch }) => {
                         </p>
                     </div>
                     <div>
-                        <Link>
+                        <Link to={`/blogs/${_id}`}>
                             <button className="btn bg-pink-500 text-white hover:text-black">Show Details</button>
                         </Link>
                         <button onClick={handleRemoveWishlist} className="btn ml-3 bg-pink-500 text-white hover:text-black">Remove Wishlist</button>

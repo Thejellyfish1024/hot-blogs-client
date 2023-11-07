@@ -3,37 +3,37 @@
 import { useContext } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
 import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 
-// https://i.ibb.co/Z6m1KgZ/travel1.webp
 
 const SingleBlog = ({ blog }) => {
-    const { title, img, short_description } = blog
-    const {user} = useContext(AuthContext)
+    const { title, img, short_description, _id } = blog
+    const { user } = useContext(AuthContext)
 
-    const handleWishlist = (blog) =>{
+    const handleWishlist = (blog) => {
 
         const email = user?.email;
-        const myWishlist = {...blog, email}
-        
+        const myWishlist = { ...blog, email }
+
         console.log(myWishlist);
         fetch('http://localhost:5000/wishlist', {
-            method:'POST',
-            headers:{
-                'content-type' : 'application/json'
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
             },
-            body:JSON.stringify(myWishlist)
+            body: JSON.stringify(myWishlist)
         })
-        .then(res => res.json())
-        .then(data =>{
-            console.log(data);
-            if(data?.acknowledged){
-                Swal.fire({
-                    title: 'Successfully Added to Wishlist!',
-                    icon: 'success',
-                    confirmButtonText: 'Close'
-                  })
-            }
-        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data?.acknowledged) {
+                    Swal.fire({
+                        title: 'Successfully Added to Wishlist!',
+                        icon: 'success',
+                        confirmButtonText: 'Close'
+                    })
+                }
+            })
     }
     return (
         <div>
@@ -46,10 +46,12 @@ const SingleBlog = ({ blog }) => {
                         <h2 className="text-xl font-bold">
                             {title}
                         </h2>
-                        <p>{short_description.slice(0,100)}</p>
+                        <p>{short_description.slice(0, 100)}</p>
                     </div>
                     <div className="mt-5 lg:mt-0 card-actions justify-end">
-                        <div className="badge badge-outline font-bold p-5 text-[#FF3811] hover:text-white hover:bg-black">Details</div>
+                        <Link to={`/blogs/${_id}`}>
+                            <div className="badge badge-outline font-bold p-5 text-[#FF3811] hover:text-white hover:bg-black">Details</div>
+                        </Link>
                         <div onClick={() => handleWishlist(blog)} className="badge badge-outline font-bold p-5 text-[#FF3811] hover:text-white hover:bg-black">Wishlist</div>
                     </div>
                 </div>
