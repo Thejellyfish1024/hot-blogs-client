@@ -9,6 +9,7 @@ import MainRoot from "../root/MainRoot";
 import Wishlist from "../pages/Wishlist/Wishlist";
 import PrivateRoute from "./PrivateRoute";
 import BlogDetails from "../pages/BlogDetails/BlogDetails";
+import UpdateDetails from "../pages/UpdateDetails/UpdateDetails";
 
 export const router = createBrowserRouter([
   {
@@ -38,6 +39,10 @@ export const router = createBrowserRouter([
           {
             path:'/blogs/:id',
             element:<BlogDetails></BlogDetails>
+          },
+          {
+            path:'/updateDetails/:id',
+            element:<UpdateDetails></UpdateDetails>
           }
         ]
       },

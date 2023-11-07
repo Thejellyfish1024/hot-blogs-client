@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 import { useQuery } from "@tanstack/react-query";
 import { useContext, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
 import Swal from "sweetalert2";
 import useBlogs from "../../hooks/useBlogs";
@@ -88,7 +88,9 @@ const BlogDetails = () => {
                                     {
                                         user?.email === data?.email ?
                                             <div className="w-full text-end mt-3">
+                                                <Link to={`/updateDetails/${id}`}>
                                                 <button className="btn btn-primary">Update Blog</button>
+                                                </Link>
                                             </div>
                                             :
                                             <div></div>
