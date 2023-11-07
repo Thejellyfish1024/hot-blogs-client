@@ -1,5 +1,6 @@
 import { Toaster } from "react-hot-toast";
 import { Link, NavLink, Outlet } from "react-router-dom";
+import Footer from "../shared/Footer";
 
 const Root = () => {
 
@@ -58,6 +59,7 @@ const Root = () => {
                     {/* Page content here */}
                     <div>
                         <Outlet></Outlet>
+                        <Footer></Footer>
                     </div>
                 </div>
                 <div className="drawer-side">

@@ -20,7 +20,7 @@ const RecentBlogs = () => {
 
     // }
     return (
-        <div className="max-w-7xl mx-auto flex justify-center my-10">
+        <div className="max-w-7xl mx-auto flex justify-center my-16">
             <div>
                 <h2 className="text-4xl text-center font-bold my-10">Recent Blogs</h2>
                 {
