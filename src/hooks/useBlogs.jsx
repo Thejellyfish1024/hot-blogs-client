@@ -3,7 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 
 const useBlogs = (url) => {
 
-    const {data, isLoading} = useQuery({
+    const {data, isLoading ,refetch} = useQuery({
         queryKey :[`${url}`],
         queryFn: async () =>{
             const data = await fetch(`http://localhost:5000/${url}`)
@@ -11,7 +11,7 @@ const useBlogs = (url) => {
         }
     })
     // console.log(data,isLoading);
-    return {data, isLoading}
+    return {data, isLoading, refetch}
 };
 
 export default useBlogs;
