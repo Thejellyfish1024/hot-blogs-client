@@ -46,7 +46,7 @@ const AddBlog = () => {
     }
     return (
         <div className=" bg-[#FF3811] p-5">
-            <div className="max-w-7xl mx-auto p-4  rounded-lg bg-orange-500">
+            <div className="max-w-7xl mx-auto p-4  rounded-lg bg-orange-600">
                 <h2 className="text-3xl font-bold text-center my-8 text-white">Add Your Blog</h2>
                 <form onSubmit={handleAddBlog} className="p-5">
                     <div className="md:flex gap-12">
