@@ -60,13 +60,13 @@ const Login = () => {
                                 <div className='border-r-2 border-gray-600 px-3'>
                                     <AiOutlineMail className='text-3xl'></AiOutlineMail>
                                 </div>
-                                <input type="email" name="email" placeholder="Your Email" className="w-full p-3  bg-gray-300" />
+                                <input type="email" required name="email" placeholder="Your Email" className="w-full p-3  bg-gray-300" />
                             </div>
                             <div className='flex items-center gap-4 bg-gray-300 w-full mt-7 p-1 rounded-md'>
                                 <div className='border-r-2 border-gray-600 px-3'>
                                     <CiLock className='text-3xl'></CiLock>
                                 </div>
-                                <input type="password" name="password" placeholder="Password" className="w-full p-3  bg-gray-300" />
+                                <input type="password" required name="password" placeholder="Password" className="w-full p-3  bg-gray-300" />
                             </div>
                             <div className='text-center mt-5'>
                                 <input type="submit" value="Login" className='px-8 py-3 text-lg font-bold text-white rounded-lg  bg-gradient-to-r from-violet-600 to-fuchsia-500 hover:from-violet-800 hover:to-fuchsia-800' />

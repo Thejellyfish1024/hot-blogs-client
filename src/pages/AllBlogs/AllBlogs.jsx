@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import useBlogs from "../../hooks/useBlogs";
 import SingleBlog from "../Home/singleBlog";
+import LoadingSkeleton from "../../shared/LoadingSkeleton";
 // import { useQuery } from "@tanstack/react-query";
 
 
@@ -56,7 +57,9 @@ const AllBlogs = () => {
             </div>
             {
                 isLoading ?
-                    <div className="text-3xl text-center font-bold mt-10">Loading ....</div>
+                    <div className="flex justify-center mt-10">
+                        <LoadingSkeleton></LoadingSkeleton>
+                    </div>
                     :
                     <div className="flex justify-center">
                         {

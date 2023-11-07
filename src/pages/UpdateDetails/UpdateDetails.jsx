@@ -61,11 +61,11 @@ const UpdateDetails = () => {
                     <div className="md:flex gap-12">
                         <div className="md:w-1/2">
                             <p className="text-xl font-semibold my-3">Blog Title</p>
-                            <input type="text" name="title" defaultValue={title} placeholder="Name" required className="input w-4/5 input-bordered input-primary " />
+                            <input type="text" name="title" defaultValue={title} placeholder="Name" required className="input lg:w-4/5 w-full input-bordered input-primary " />
                         </div>
                         <div className="md:w-1/2">
                             <p className="text-xl font-semibold my-3">Image url</p>
-                            <input type="text" name="img" defaultValue={img} required placeholder="Url" className="input input-bordered input-accent w-4/5" />
+                            <input type="text" name="img" defaultValue={img} required placeholder="Url" className="input input-bordered input-accent lg:w-4/5 w-full" />
                         </div>
                     </div>
                     {/*  */}
@@ -82,7 +82,7 @@ const UpdateDetails = () => {
                         </div>
                         <div className="md:w-1/2">
                             <p className="text-xl font-semibold my-3">Email</p>
-                            <input type="text" name="email" defaultValue={email} readOnly required placeholder="Type" className="input font-bold input-bordered input-accent w-4/5" />
+                            <input type="text" name="email" defaultValue={email} readOnly required placeholder="Type" className="input w-full font-bold input-bordered input-accent lg:w-4/5" />
                         </div>
                     </div>
                     {/*  */}

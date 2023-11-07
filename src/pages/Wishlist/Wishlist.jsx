@@ -1,5 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import WishlistCard from "./WishlistCard";
+import LoadingSkeleton from "../../shared/LoadingSkeleton";
 
 
 const Wishlist = () => {
@@ -20,7 +21,9 @@ const Wishlist = () => {
             </h2>
             {
                 isLoading ?
-                    <div className="text-2xl mt-10 text-center font-bold"> LOading...</div>
+                    <div className="text-2xl mt-10 ">
+                        <LoadingSkeleton></LoadingSkeleton>
+                    </div>
                     :
                     <div>
                         {

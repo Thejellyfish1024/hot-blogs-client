@@ -1,12 +1,14 @@
 import toast, { Toaster } from "react-hot-toast";
 import { Link, NavLink, Outlet } from "react-router-dom";
 import Footer from "../shared/Footer";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../provider/AuthProvider";
+import { FaUserCircle } from "react-icons/fa";
 
 const Root = () => {
 
-    const {user, logOut} = useContext(AuthContext)
+    const { user, logOut } = useContext(AuthContext)
+    const [showProfile, setShowProfile] = useState(false);
 
 
     const navLinks = <>
@@ -52,21 +54,44 @@ const Root = () => {
                             </div>
                             {
                                 user ?
-                                <div>
-                                    <button onClick={() =>{
-                                        logOut();
-                                        toast.success('User logged out!!')
-                                    }} className=" btn btn-outline text-[#FF3811] btn-sm md:btn-md md:px-6 mr-3">Log Out</button>
-                                </div>
-                                :
-                                <div>
-                                <Link to='/login'>
-                                    <button className=" btn btn-outline text-[#FF3811] btn-sm md:btn-md md:px-6 mr-3">Login</button>
-                                </Link>
-                                <Link to='/register'>
-                                    <button className=" btn btn-outline text-[#FF3811] btn-sm md:btn-md md:px-6">Register</button>
-                                </Link>
-                            </div>
+                                    <div className='relative flex items-center gap-3'>
+
+                                        <button onClick={() => setShowProfile(!showProfile)}>
+                                            {
+                                                user?.photoURL ?
+                                                    <img className='w-12 h-12 rounded-full' src={user.photoURL} alt="not found" /> :
+                                                    <FaUserCircle className='text-4xl'></FaUserCircle>
+                                            }
+                                        </button>
+                                        {/* top-9 right-0 */}
+                                        <div className={`text-end bg-gray-300 z-30 p-5 top-12 right-1 rounded-lg absolute flex justify-center w-60 ${showProfile ? '' : 'hidden'}`}>
+                                            <div className="">
+                                                <div className="flex justify-center">
+                                                    <img src={user?.photoURL} className="w-16 h-16 rounded-full" alt="" />
+                                                </div>
+                                                <div className="flex justify-center">
+                                                    <h5 className='text-lg text-black font-semibold mb-2'>{user?.displayName}</h5>
+                                                </div>
+                                                <p className="text-center mb-2">{user?.email}</p>
+                                                <div className="flex justify-center">
+                                                    <button onClick={() => {
+                                                        logOut();
+                                                        setShowProfile(!showProfile)
+                                                        toast.success('User logged out!!')
+                                                    }} className=" btn btn-outline text-[#FF3811] btn-sm md:btn-md md:px-6">Log Out</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    :
+                                    <div>
+                                        <Link to='/login'>
+                                            <button className=" btn btn-outline text-[#FF3811] btn-sm md:btn-md md:px-6 mr-3">Login</button>
+                                        </Link>
+                                        <Link to='/register'>
+                                            <button className=" btn btn-outline text-[#FF3811] btn-sm md:btn-md md:px-6">Register</button>
+                                        </Link>
+                                    </div>
                             }
                         </div>
                     </div>
