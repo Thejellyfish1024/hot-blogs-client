@@ -4,7 +4,7 @@ import WishlistCard from "./WishlistCard";
 
 const Wishlist = () => {
 
-    const {data, isLoading} = useQuery({
+    const {data, isLoading , refetch} = useQuery({
         queryKey :['wishlist'],
         queryFn: async () =>{
             const data = await fetch(`http://localhost:5000/wishlist`)
@@ -22,9 +22,9 @@ const Wishlist = () => {
                 isLoading ? 
                 <div className="text-2xl mt-10 text-center font-bold"> LOading...</div>
                 :
-                <div className="grid grid-cols-2 gap-5">
+                <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-8 gap-2">
                     {
-                        data?.map(blog => <WishlistCard key={blog._id} blog={blog}></WishlistCard>)
+                        data?.map(blog => <WishlistCard key={blog._id} blog={blog} refetch ={refetch}></WishlistCard>)
                     }
                 </div>
             }

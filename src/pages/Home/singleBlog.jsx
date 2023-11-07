@@ -46,7 +46,7 @@ const SingleBlog = ({ blog }) => {
                         <h2 className="text-xl font-bold">
                             {title}
                         </h2>
-                        <p>{short_description}</p>
+                        <p>{short_description.slice(0,100)}</p>
                     </div>
                     <div className="mt-5 lg:mt-0 card-actions justify-end">
                         <div className="badge badge-outline font-bold p-5 text-[#FF3811] hover:text-white hover:bg-black">Details</div>
