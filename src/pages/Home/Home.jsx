@@ -13,10 +13,10 @@ const Home = () => {
     return (
         <div>
             <Banner></Banner>
-            <Newsletter></Newsletter>
             <RecentBlogs></RecentBlogs>
             <Membership></Membership>
             <PieChartCom></PieChartCom>
+            <Newsletter></Newsletter>
         </div>
     );
 };

@@ -36,8 +36,8 @@ const PieChartCom = () => {
     return (
         <div className="max-w-7xl mx-auto flex justify-center">
             <div>
-                <h2 className='md:text-4xl text-3xl font-bold text-center my-10'>Popular Categories</h2>
-                <p className='text-xl text-purple-500 font-bold text-center mb-10'>Percentage of popular blog categories</p>
+                <h2 className='md:text-4xl text-3xl font-bold text-center mt-8 mb-24'>Popular Categories</h2>
+                
                 <div className=' flex justify-center items-center'>
                     <PieChart
                         series={[
@@ -54,6 +54,7 @@ const PieChartCom = () => {
                         width={420}
                     />
                 </div>
+                <p className='text-xl text-purple-500 font-bold text-center mb-16'>Percentage of popular blog categories</p>
             </div>
 
         </div>
