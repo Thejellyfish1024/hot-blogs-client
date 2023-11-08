@@ -4,6 +4,8 @@ import { useContext } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
 import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
+import { PhotoProvider, PhotoView } from "react-photo-view";
+import 'react-photo-view/dist/react-photo-view.css';
 
 
 const SingleBlog = ({ blog }) => {
@@ -39,7 +41,11 @@ const SingleBlog = ({ blog }) => {
         <div>
             <div className=" flex flex-col lg:w-96 w-80 lg:h-[60vh] md:h-[75vh] bg-base-300 rounded-lg">
                 <figure className="w-full flex-1 ">
-                    <img src={img} className="w-full h-[32vh] rounded-t-lg" alt="loading" />
+                    <PhotoProvider>
+                        <PhotoView src={img}>
+                            <img src={img} className="w-full h-[32vh] rounded-t-lg" alt="loading" />
+                        </PhotoView>
+                    </PhotoProvider>
                 </figure>
                 <div className="flex-1 flex flex-col p-5">
                     <div className="flex-1 space-y-3">

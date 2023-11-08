@@ -9,7 +9,7 @@ import LoadingSkeleton from "../../shared/LoadingSkeleton";
 
 const RecentBlogs = () => {
     const { data, isLoading } = useBlogs('recentBlogs')
-    console.log(data, isLoading);
+    // console.log(data, isLoading);
     return (
         <div className="max-w-7xl mx-auto flex justify-center my-16">
             <div>

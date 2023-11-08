@@ -1,39 +1,46 @@
 /* eslint-disable react/prop-types */
 
+import { PhotoProvider, PhotoView } from "react-photo-view";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
+import 'react-photo-view/dist/react-photo-view.css';
 
 
 const WishlistCard = ({ blog, refetch }) => {
-    const { title, img, short_description, category ,_id } = blog
+    const { title, img, short_description, category, _id } = blog
 
-    const handleRemoveWishlist = () =>{
-        fetch(`http://localhost:5000/wishlist/${_id}`,{
-            method:'DELETE'
+    const handleRemoveWishlist = () => {
+        fetch(`http://localhost:5000/wishlist/${_id}`, {
+            method: 'DELETE'
         })
-        .then(res => res.json())
-        .then(data =>{
-            console.log(data);
-            if(data.deletedCount > 0){
-                refetch()
-                Swal.fire({
-                    title: 'Successfully Removed!',
-                    icon: 'success',
-                    confirmButtonText: 'Close'
-                  })
-            }
-        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.deletedCount > 0) {
+                    refetch()
+                    Swal.fire({
+                        title: 'Successfully Removed!',
+                        icon: 'success',
+                        confirmButtonText: 'Close'
+                    })
+                }
+            })
     }
 
     return (
         <div className="p-8 lg:p-0 ">
             <div className="relative flex w-full max-w-[48rem] lg:min-h-[40vh] flex-col md:flex-row rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
                 <div className="relative md:w-2/5  m-0 overflow-hidden text-gray-700 bg-white rounded-r-none shrink-0 rounded-xl bg-clip-border">
-                    <img
-                        src={img}
-                        alt="image"
-                        className="object-cover w-full h-full"
-                    />
+                    <PhotoProvider>
+                        <PhotoView src={img}>
+                            <img
+                                src={img}
+                                alt="image"
+                                className="object-cover w-full h-full"
+                            />
+                        </PhotoView>
+                    </PhotoProvider>
+
                 </div>
                 <div className="p-6 flex flex-col">
                     <div className="flex-grow">

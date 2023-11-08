@@ -11,7 +11,7 @@ const PieChartCom = () => {
             <LoadingSkeleton></LoadingSkeleton>
         </div>
     }
-    console.log(data);
+    // console.log(data);
 
     const getArcLabel = (params) => {
         const percent = params.value / data?.length;
