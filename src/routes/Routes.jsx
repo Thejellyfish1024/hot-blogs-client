@@ -49,7 +49,7 @@ export const router = createBrowserRouter([
           },
           {
             path:'/updateDetails/:id',
-            element:<UpdateDetails></UpdateDetails>
+            element:<PrivateRoute><UpdateDetails></UpdateDetails></PrivateRoute>
           }
         ]
       },

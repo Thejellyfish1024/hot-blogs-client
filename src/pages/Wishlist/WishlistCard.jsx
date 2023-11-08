@@ -10,7 +10,7 @@ const WishlistCard = ({ blog, refetch }) => {
     const { title, img, short_description, category, _id } = blog
 
     const handleRemoveWishlist = () => {
-        fetch(`http://localhost:5000/wishlist/${_id}`, {
+        fetch(`https://hot-blogs-server-jlk8dgjgo-al-amin-rahims-projects.vercel.app/wishlist/${_id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())

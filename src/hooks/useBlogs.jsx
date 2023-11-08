@@ -6,7 +6,7 @@ const useBlogs = (url) => {
     const {data, isLoading ,refetch} = useQuery({
         queryKey :[`${url}`],
         queryFn: async () =>{
-            const data = await fetch(`http://localhost:5000/${url}`)
+            const data = await fetch(`https://hot-blogs-server-jlk8dgjgo-al-amin-rahims-projects.vercel.app/${url}`)
             return await data.json()
         }
     })

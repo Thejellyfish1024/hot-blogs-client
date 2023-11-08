@@ -19,7 +19,7 @@ const SingleBlog = ({ blog }) => {
         const myWishlist = { ...blog, email }
 
         console.log(myWishlist);
-        fetch('http://localhost:5000/wishlist', {
+        fetch('https://hot-blogs-server-jlk8dgjgo-al-amin-rahims-projects.vercel.app/wishlist', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

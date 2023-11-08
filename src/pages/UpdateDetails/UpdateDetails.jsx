@@ -31,7 +31,7 @@ const UpdateDetails = () => {
             title, img, category, short_description, long_description
         }
         // console.log(updatedBlog);
-        fetch(`http://localhost:5000/blogs/${id}`, {
+        fetch(`https://hot-blogs-server-jlk8dgjgo-al-amin-rahims-projects.vercel.app/blogs/${id}`, {
             method:'PUT',
             headers:{
                 'content-type' : 'application/json'

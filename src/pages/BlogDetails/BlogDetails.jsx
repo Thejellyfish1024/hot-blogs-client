@@ -18,7 +18,7 @@ const BlogDetails = () => {
     const { data, isLoading } = useQuery({
         queryKey: [`${id}`],
         queryFn: async () => {
-            const data = await fetch(`http://localhost:5000/blogs/${id}`)
+            const data = await fetch(`https://hot-blogs-server-jlk8dgjgo-al-amin-rahims-projects.vercel.app/blogs/${id}`)
             return await data.json()
         }
     })
@@ -42,7 +42,7 @@ const BlogDetails = () => {
         const newCommentInfo = { email, userName, userImg, blog_id, comment }
         console.log(newCommentInfo);
 
-        fetch('http://localhost:5000/comments', {
+        fetch('https://hot-blogs-server-jlk8dgjgo-al-amin-rahims-projects.vercel.app/comments', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
