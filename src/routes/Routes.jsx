@@ -11,6 +11,7 @@ import PrivateRoute from "./PrivateRoute";
 import BlogDetails from "../pages/BlogDetails/BlogDetails";
 import UpdateDetails from "../pages/UpdateDetails/UpdateDetails";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
+import FeaturedBlogs from "../pages/FeaturedBlogs/FeaturedBlogs";
 
 export const router = createBrowserRouter([
   {
@@ -41,6 +42,10 @@ export const router = createBrowserRouter([
           {
             path:'/blogs/:id',
             element:<BlogDetails></BlogDetails>
+          },
+          {
+            path:'/featuredBlogs',
+            element:<FeaturedBlogs></FeaturedBlogs>
           },
           {
             path:'/updateDetails/:id',

@@ -17,11 +17,18 @@ const AddBlog = () => {
         const long_description = form.long_description.value;
         const posted_time = new Date().valueOf();
         const email = user?.email;
+        const userImg = user?.photoURL;
+        const userName = user?.displayName;
+        const longDesLength = long_description.length;
 
         
         const newBlog = {
-            title, img, category, short_description, long_description, posted_time, email
+            title, img, category, short_description,
+             long_description, posted_time,
+             email,userImg,userName,
+            longDesLength
         }
+
         console.log(newBlog);
         fetch('http://localhost:5000/blogs',{
             method: 'POST',
@@ -64,11 +71,11 @@ const AddBlog = () => {
                         <div className="md:w-1/2">
                             <p className="text-xl font-semibold my-3">Category</p>
                             <select name="category" className=" w-full lg:w-4/5 border border-purple-500 rounded-md p-3 bg-black text-white lg:font-bold font-medium " id="">
-                                <option value="Travel">Travel</option>
-                                <option value="Travel">Food and Cooking</option>
-                                <option value="Travel">Lifestyle and Personal Development</option>
-                                <option value="Travel">Technology and Gadgets</option>
-                                <option value="Travel">Finance and Money Management</option>
+                                <option value="travel">Travel</option>
+                                <option value="food">Food and Cooking</option>
+                                <option value="lifestyle">Lifestyle and Personal Development</option>
+                                <option value="technology">Technology and Gadgets</option>
+                                <option value="finance">Finance and Money Management</option>
                             </select>
                             {/* <input type="text" name="brand" required placeholder="Brand Name" className="" /> */}
                         </div>
