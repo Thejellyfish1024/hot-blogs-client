@@ -1,14 +1,17 @@
 import { useQuery } from "@tanstack/react-query";
 import WishlistCard from "./WishlistCard";
 import LoadingSkeleton from "../../shared/LoadingSkeleton";
+import { useContext } from "react";
+import { AuthContext } from "../../provider/AuthProvider";
 
 
 const Wishlist = () => {
 
+    const { user } = useContext(AuthContext)
     const { data, isLoading, refetch } = useQuery({
         queryKey: ['wishlist'],
         queryFn: async () => {
-            const data = await fetch(`http://localhost:5000/wishlist`)
+            const data = await fetch(`http://localhost:5000/wishlist?email=${user?.email}`)
             return await data.json()
         }
     })

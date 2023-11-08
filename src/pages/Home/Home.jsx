@@ -1,5 +1,6 @@
 
 import Banner from "./Banner";
+import Membership from "./Membership";
 import RecentBlogs from "./RecentBlogs";
 
 
@@ -11,6 +12,7 @@ const Home = () => {
         <div>
             <Banner></Banner>
             <RecentBlogs></RecentBlogs>
+            <Membership></Membership>
         </div>
     );
 };
