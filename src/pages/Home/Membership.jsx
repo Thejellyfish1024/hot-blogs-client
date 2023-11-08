@@ -2,9 +2,9 @@
 
 const Membership = () => {
     return (
-        <div className="max-w-7xl mx-auto mb-64  mt-16 relative">
+        <div className="max-w-7xl mx-auto lg:mb-64 p-8 lg:p-0  mt-16 relative">
             <h2 className="text-4xl font-bold text-center my-10">Membership Levels</h2>
-            <div className="hero rounded-md min-h-[70vh]" style={{ backgroundImage: 'url(https://blinkbits.com/wp-content/uploads/2018/10/Blogs-1.jpg)' }}>
+            <div className="hero rounded-md min-h-screen lg:min-h-[70vh]" style={{ backgroundImage: 'url(https://blinkbits.com/wp-content/uploads/2018/10/Blogs-1.jpg)' }}>
                 <div className="hero-overlay bg-opacity-80"></div>
                 <div className=" text-center text-neutral-content">
                     <div>
@@ -13,11 +13,11 @@ const Membership = () => {
                     </div>
                 </div>
             </div>
-            <div className="">
-                <div className="  absolute -bottom-48 grid grid-cols-3">
+            <div className="mt-5 lg:mt-0">
+                <div className="  lg:absolute lg:-bottom-48 grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5 lg:gap-0">
                     {/* silver */}
                     <div className="flex justify-center">
-                        <div className="bg-base-300 w-4/5 rounded-md  flex flex-col justify-center items-center">
+                        <div className="bg-base-300 md:w-4/5 w-4/6 rounded-md  flex flex-col justify-center items-center">
                             <h4 className="text-xl font-bold rounded-md bg-gray-400 w-full text-center py-2 ">Silver</h4>
                             <h5 className="text-lg mt-4 mb-6 font-bold">$5.00/Month</h5>
                             <div className="w-full px-3 ">
@@ -31,7 +31,7 @@ const Membership = () => {
                     </div>
                     {/* gold */}
                     <div className="flex justify-center">
-                        <div className="bg-base-300 w-4/5 rounded-md  flex flex-col justify-center items-center">
+                        <div className="bg-base-300 md:w-4/5 w-4/6 rounded-md  flex flex-col justify-center items-center">
                             <h4 className="text-xl font-bold rounded-md bg-gray-400 w-full text-center py-2 ">Gold</h4>
                             <h5 className="text-lg mt-4 mb-6 font-bold">$15.00/Month</h5>
                             <div className="w-full px-3 ">
@@ -45,7 +45,7 @@ const Membership = () => {
                     </div>
                     {/* platinum */}
                     <div className="flex justify-center">
-                        <div className="bg-base-300 w-4/5 rounded-md  flex flex-col justify-center items-center">
+                        <div className="bg-base-300 md:w-4/5 w-4/6 rounded-md  flex flex-col justify-center items-center">
                             <h4 className="text-xl font-bold rounded-md bg-gray-400 w-full text-center py-2 ">Platinum</h4>
                             <h5 className="text-lg mt-4 mb-6 font-bold">$40.00/Month</h5>
                             <div className="w-full px-3 ">

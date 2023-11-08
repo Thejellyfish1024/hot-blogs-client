@@ -1,6 +1,7 @@
 
 import Banner from "./Banner";
 import Membership from "./Membership";
+import PieChartCom from "./PieChartCom";
 import RecentBlogs from "./RecentBlogs";
 
 
@@ -13,6 +14,7 @@ const Home = () => {
             <Banner></Banner>
             <RecentBlogs></RecentBlogs>
             <Membership></Membership>
+            <PieChartCom></PieChartCom>
         </div>
     );
 };

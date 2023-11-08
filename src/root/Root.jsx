@@ -13,19 +13,19 @@ const Root = () => {
 
     const navLinks = <>
         <NavLink to="/" className={({ isActive }) => isActive ? "text-red-500 text-lg md:text-xl font-bold " : "text-lg md:text-xl font-semibold"} >
-            <li><a>Home</a></li>
+            <li><p>Home</p></li>
         </NavLink>
         <NavLink to="/addBlog" className={({ isActive }) => isActive ? "text-red-500 text-lg md:text-xl font-bold" : "text-lg md:text-xl font-semibold"} >
-            <li><a>Add Blog</a></li>
+            <li><p>Add Blog</p></li>
         </NavLink>
         <NavLink to="/allBlogs" className={({ isActive }) => isActive ? "text-red-500 text-lg md:text-xl font-bold" : "text-lg md:text-xl font-semibold"} >
-            <li><a>All Blogs</a></li>
+            <li><p>All Blogs</p></li>
         </NavLink>
         <NavLink to="/featuredBlogs" className={({ isActive }) => isActive ? "text-red-500 text-lg md:text-xl font-bold" : "text-lg md:text-xl font-semibold"} >
-            <li><a>Featured Blogs</a></li>
+            <li><p>Featured Blogs</p></li>
         </NavLink>
         <NavLink to="/wishlist" className={({ isActive }) => isActive ? "text-red-500 text-lg md:text-xl font-bold" : "text-lg md:text-xl font-semibold"} >
-            <li><a>Wishlist</a></li>
+            <li><p>Wishlist</p></li>
         </NavLink>
     </>
 
