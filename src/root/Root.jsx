@@ -4,6 +4,7 @@ import Footer from "../shared/Footer";
 import { useContext, useState } from "react";
 import { AuthContext } from "../provider/AuthProvider";
 import { FaUserCircle } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 const Root = () => {
 
@@ -13,19 +14,19 @@ const Root = () => {
 
     const navLinks = <>
         <NavLink to="/" className={({ isActive }) => isActive ? "text-red-500 text-lg md:text-xl font-bold " : "text-lg md:text-xl font-semibold"} >
-            <li><p>Home</p></li>
+            <li><motion.p transition={{ duration: 1.5 }} animate={{ rotateZ: 360 }}>Home</motion.p></li>
         </NavLink>
         <NavLink to="/addBlog" className={({ isActive }) => isActive ? "text-red-500 text-lg md:text-xl font-bold" : "text-lg md:text-xl font-semibold"} >
-            <li><p>Add Blog</p></li>
+            <li><motion.p transition={{ duration: 1.5 }} animate={{ rotateZ: 360 }}>Add Blog</motion.p></li>
         </NavLink>
         <NavLink to="/allBlogs" className={({ isActive }) => isActive ? "text-red-500 text-lg md:text-xl font-bold" : "text-lg md:text-xl font-semibold"} >
-            <li><p>All Blogs</p></li>
+            <li><motion.p transition={{ duration: 1.5 }} animate={{ rotateZ: 360 }}>All Blogs</motion.p></li>
         </NavLink>
         <NavLink to="/featuredBlogs" className={({ isActive }) => isActive ? "text-red-500 text-lg md:text-xl font-bold" : "text-lg md:text-xl font-semibold"} >
-            <li><p>Featured Blogs</p></li>
+            <li><motion.p transition={{ duration: 1.5 }} animate={{ rotateZ: 360 }}>Featured Blogs</motion.p></li>
         </NavLink>
         <NavLink to="/wishlist" className={({ isActive }) => isActive ? "text-red-500 text-lg md:text-xl font-bold" : "text-lg md:text-xl font-semibold"} >
-            <li><p>Wishlist</p></li>
+            <li><motion.p transition={{ duration: 1.5 }} animate={{ rotateZ: 360 }}>Wishlist</motion.p></li>
         </NavLink>
     </>
 
@@ -42,57 +43,59 @@ const Root = () => {
                             </label>
                         </div>
                         <div className="flex max-w-7xl mx-auto justify-between w-full">
-                            <div className="flex flex-col md:flex-row items-center">
+                            <motion.div transition={{ duration: 1.5, type: 'spring', stiffness: 300 }} initial={{ y: -250 }} animate={{ y: -2 }} className="flex flex-col md:flex-row items-center">
                                 <img src="https://w7.pngwing.com/pngs/204/418/png-transparent-social-media-blogger-computer-icons-logo-blog-text-rectangle-orange-thumbnail.png" className="w-10 h-10 lg:w-12 lg:h-12" alt="" />
                                 <h4 className="text-lg md:text-xl italic font-bold ml-3 text-purple-500">Hot Blogs</h4>
-                            </div>
+                            </motion.div>
                             <div className="flex-none hidden lg:block">
                                 <ul className="menu menu-horizontal">
                                     {/* Navbar menu content here */}
                                     {navLinks}
                                 </ul>
                             </div>
-                            {
-                                user ?
-                                    <div className='relative flex items-center gap-3'>
+                            <motion.div initial={{opacity:0}} transition={{duration:1.5, delay:1}} animate={{opacity:1}}>
+                                {
+                                    user ?
+                                        <div className='relative flex items-center gap-3'>
 
-                                        <button onClick={() => setShowProfile(!showProfile)}>
-                                            {
-                                                user?.photoURL ?
-                                                    <img className='w-12 h-12 rounded-full' src={user.photoURL} alt="not found" /> :
-                                                    <FaUserCircle className='text-4xl'></FaUserCircle>
-                                            }
-                                        </button>
-                                        {/* top-9 right-0 */}
-                                        <div className={`text-end bg-gray-300 z-30 p-5 top-12 right-1 rounded-lg absolute flex justify-center w-60 ${showProfile ? '' : 'hidden'}`}>
-                                            <div className="">
-                                                <div className="flex justify-center">
-                                                    <img src={user?.photoURL} className="w-16 h-16 rounded-full" alt="" />
-                                                </div>
-                                                <div className="flex justify-center">
-                                                    <h5 className='text-lg text-black font-semibold mb-2'>{user?.displayName}</h5>
-                                                </div>
-                                                <p className="text-center mb-2">{user?.email}</p>
-                                                <div className="flex justify-center">
-                                                    <button onClick={() => {
-                                                        logOut();
-                                                        setShowProfile(!showProfile)
-                                                        toast.success('User logged out!!')
-                                                    }} className=" btn btn-outline text-[#FF3811] btn-sm md:btn-md md:px-6">Log Out</button>
+                                            <button onClick={() => setShowProfile(!showProfile)}>
+                                                {
+                                                    user?.photoURL ?
+                                                        <img className='w-12 h-12 rounded-full' src={user.photoURL} alt="not found" /> :
+                                                        <FaUserCircle className='text-4xl'></FaUserCircle>
+                                                }
+                                            </button>
+                                            {/* top-9 right-0 */}
+                                            <div className={`text-end bg-gray-300 z-30 p-5 top-12 right-1 rounded-lg absolute flex justify-center w-60 ${showProfile ? '' : 'hidden'}`}>
+                                                <div className="">
+                                                    <div className="flex justify-center">
+                                                        <img src={user?.photoURL} className="w-16 h-16 rounded-full" alt="" />
+                                                    </div>
+                                                    <div className="flex justify-center">
+                                                        <h5 className='text-lg text-black font-semibold mb-2'>{user?.displayName}</h5>
+                                                    </div>
+                                                    <p className="text-center mb-2">{user?.email}</p>
+                                                    <div className="flex justify-center">
+                                                        <button onClick={() => {
+                                                            logOut();
+                                                            setShowProfile(!showProfile)
+                                                            toast.success('User logged out!!')
+                                                        }} className=" btn btn-outline text-[#FF3811] btn-sm md:btn-md md:px-6">Log Out</button>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    :
-                                    <div>
-                                        <Link to='/login'>
-                                            <button className=" btn btn-outline text-[#FF3811] btn-sm md:btn-md md:px-6 mr-3">Login</button>
-                                        </Link>
-                                        <Link to='/register'>
-                                            <button className=" btn btn-outline text-[#FF3811] btn-sm md:btn-md md:px-6">Register</button>
-                                        </Link>
-                                    </div>
-                            }
+                                        :
+                                        <div>
+                                            <Link to='/login'>
+                                                <button className=" btn btn-outline text-[#FF3811] btn-sm md:btn-md md:px-6 mr-3">Login</button>
+                                            </Link>
+                                            <Link to='/register'>
+                                                <button className=" btn btn-outline text-[#FF3811] btn-sm md:btn-md md:px-6">Register</button>
+                                            </Link>
+                                        </div>
+                                }
+                            </motion.div>
                         </div>
                     </div>
 

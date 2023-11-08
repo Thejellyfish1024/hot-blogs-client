@@ -1,4 +1,4 @@
-
+import { motion } from "framer-motion";
 
 const Membership = () => {
     return (
@@ -16,7 +16,7 @@ const Membership = () => {
             <div className="mt-5 lg:mt-0">
                 <div className="  lg:absolute lg:-bottom-48 grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5 lg:gap-0">
                     {/* silver */}
-                    <div className="flex justify-center">
+                    <motion.div whileHover={{scale: 1.1}} className="flex justify-center">
                         <div className="bg-base-300 md:w-4/5 w-4/6 rounded-md  flex flex-col justify-center items-center">
                             <h4 className="text-xl font-bold rounded-md bg-gray-400 w-full text-center py-2 ">Silver</h4>
                             <h5 className="text-lg mt-4 mb-6 font-bold">$5.00/Month</h5>
@@ -28,9 +28,9 @@ const Membership = () => {
                                 Membership expires after 1 year.
                             </p>
                         </div>
-                    </div>
+                    </motion.div>
                     {/* gold */}
-                    <div className="flex justify-center">
+                    <motion.div whileHover={{scale: 1.1}} className="flex justify-center">
                         <div className="bg-base-300 md:w-4/5 w-4/6 rounded-md  flex flex-col justify-center items-center">
                             <h4 className="text-xl font-bold rounded-md bg-gray-400 w-full text-center py-2 ">Gold</h4>
                             <h5 className="text-lg mt-4 mb-6 font-bold">$15.00/Month</h5>
@@ -42,9 +42,9 @@ const Membership = () => {
                                 Membership expires after 1 year.
                             </p>
                         </div>
-                    </div>
+                    </motion.div>
                     {/* platinum */}
-                    <div className="flex justify-center">
+                    <motion.div whileHover={{scale: 1.1}} className="flex justify-center">
                         <div className="bg-base-300 md:w-4/5 w-4/6 rounded-md  flex flex-col justify-center items-center">
                             <h4 className="text-xl font-bold rounded-md bg-gray-400 w-full text-center py-2 ">Platinum</h4>
                             <h5 className="text-lg mt-4 mb-6 font-bold">$40.00/Month</h5>
@@ -56,7 +56,7 @@ const Membership = () => {
                                 Membership expires after 1 year.
                             </p>
                         </div>
-                    </div>
+                    </motion.div>
 
                 </div>
             </div>

@@ -6,6 +6,7 @@ import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
 import { PhotoProvider, PhotoView } from "react-photo-view";
 import 'react-photo-view/dist/react-photo-view.css';
+import { motion } from "framer-motion";
 
 
 const SingleBlog = ({ blog }) => {
@@ -39,7 +40,7 @@ const SingleBlog = ({ blog }) => {
     }
     return (
         <div>
-            <div className=" flex flex-col lg:w-96 w-80 lg:h-[60vh] md:h-[75vh] bg-base-300 rounded-lg">
+            <motion.div whileHover={{scale:1.1}} className=" flex flex-col lg:w-96 w-80 lg:h-[60vh] md:h-[75vh] bg-base-300 rounded-lg">
                 <figure className="w-full flex-1 ">
                     <PhotoProvider>
                         <PhotoView src={img}>
@@ -61,7 +62,7 @@ const SingleBlog = ({ blog }) => {
                         <div onClick={() => handleWishlist(blog)} className="badge badge-outline font-bold p-5 text-[#FF3811] hover:text-white hover:bg-black">Wishlist</div>
                     </div>
                 </div>
-            </div>
+            </motion.div>
         </div>
     );
 };
