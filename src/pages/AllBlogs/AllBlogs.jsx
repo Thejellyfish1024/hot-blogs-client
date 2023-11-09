@@ -50,7 +50,7 @@ const AllBlogs = () => {
                 {categoryLinks}
             </ul>
             <div className="flex mt-3 justify-center">
-                <div className="w-1/2 flex border border-gray-300 rounded-lg">
+                <div className="md:w-1/2 flex border border-gray-300 rounded-lg">
                     <input name="search" ref={inputRef} type="text" placeholder="Search here..." className=" border-gray-500 rounded-md  pl-5 text-lg w-full " />
                     <button onClick={() => handleSearch()} className="bg-red-500 p-3 rounded-r-lg btn text-white hover:text-black">Search</button>
                 </div>

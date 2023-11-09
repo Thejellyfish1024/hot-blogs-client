@@ -4,6 +4,7 @@ import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStat
 import { createContext, useState } from "react";
 import { useEffect } from "react";
 import app from "../config/firebase.config";
+import axios from "axios";
 
 export const AuthContext = createContext(null);
 
@@ -41,13 +42,33 @@ const AuthProvider = ({ children }) => {
 
     useEffect(() => {
         const unSubscribe = onAuthStateChanged(auth, currentUser => {
-            console.log('current user stat: ', currentUser);
-            setLoading(false)
+            // console.log('current user stat: ', currentUser);
+            // setLoading(false)
+            // setUser(currentUser)
+
+            const userEmail = currentUser?.email || user?.email;
+            const loggedUser = {email : userEmail}
+            console.log('logged user : ',loggedUser);
+            console.log('current user', currentUser);
             setUser(currentUser)
+            setLoading(false)
+
+            if(currentUser){
+                axios.post('https://hot-blogs-server.vercel.app/jwt',loggedUser,{withCredentials:true})
+                .then(res =>{
+                    console.log('token response', res.data);
+                })
+            }
+            else {
+                axios.post('https://hot-blogs-server.vercel.app/logout',user,{withCredentials:true})
+                .then(res =>{
+                    console.log(res.data);
+                })
+            }
 
         })
         return () => unSubscribe();
-    }, [])
+    }, [user])
 
     const authInfo = {
         user,

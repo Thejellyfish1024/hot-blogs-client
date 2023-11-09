@@ -9,8 +9,10 @@ import 'react-photo-view/dist/react-photo-view.css';
 const WishlistCard = ({ blog, refetch }) => {
     const { title, img, short_description, category, _id } = blog
 
+    // console.log('from wishlist page',blog);
+
     const handleRemoveWishlist = () => {
-        fetch(`https://hot-blogs-server-jlk8dgjgo-al-amin-rahims-projects.vercel.app/wishlist/${_id}`, {
+        fetch(`https://hot-blogs-server.vercel.app/wishlist/${_id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())

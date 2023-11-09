@@ -30,7 +30,7 @@ const AddBlog = () => {
         }
 
         console.log(newBlog);
-        fetch('https://hot-blogs-server-jlk8dgjgo-al-amin-rahims-projects.vercel.app/blogs',{
+        fetch('https://hot-blogs-server.vercel.app/blogs',{
             method: 'POST',
             headers:{
                 'content-type' : 'application/json'

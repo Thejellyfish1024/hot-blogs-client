@@ -39,7 +39,7 @@ const FeaturedBlogs = () => {
         },
         {
             name: <p className="font-bold text-lg">{'Blog Title'}</p>,
-            selector: row => <p className="font-semibold">{row.title}</p>
+            selector: row => <p className=" font-semibold">{row.title}</p>
         },
         {
             name:<p className="font-bold text-lg">{'Owner Profile'}</p>,

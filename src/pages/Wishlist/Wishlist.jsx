@@ -3,19 +3,24 @@ import WishlistCard from "./WishlistCard";
 import LoadingSkeleton from "../../shared/LoadingSkeleton";
 import { useContext } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
+import useAxiosSecure from "../../hooks/useAxiosSecure";
 
 
 const Wishlist = () => {
 
     const { user } = useContext(AuthContext)
+
+    const axiosSecure = useAxiosSecure()
+
     const { data, isLoading, refetch } = useQuery({
         queryKey: ['wishlist'],
         queryFn: async () => {
-            const data = await fetch(`https://hot-blogs-server-jlk8dgjgo-al-amin-rahims-projects.vercel.app/wishlist?email=${user?.email}`)
-            return await data.json()
+            const data = await axiosSecure(`wishlist?email=${user?.email}`)
+            return await data?.data
         }
     })
-    console.log(data, isLoading);
+    // https://hot-blogs-server.vercel.app
+    // console.log(data, isLoading);
 
     return (
         <div className="max-w-7xl mx-auto min-h-[60vh] mb-16">
@@ -30,7 +35,7 @@ const Wishlist = () => {
                     :
                     <div>
                         {
-                            data.length > 0 ?
+                            data?.length > 0 ?
                                 <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-8 gap-2">
                                     {
                                         data?.map(blog => <WishlistCard key={blog._id} blog={blog} refetch={refetch}></WishlistCard>)

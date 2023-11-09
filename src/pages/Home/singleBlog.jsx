@@ -16,10 +16,15 @@ const SingleBlog = ({ blog }) => {
     const handleWishlist = (blog) => {
 
         const email = user?.email;
-        const myWishlist = { ...blog, email }
+        const title = blog.title;
+        const img = blog.img;
+        const category = blog.category;
+        const short_description = blog.short_description;
+        const long_description = blog.long_description;
+        const myWishlist = { title,category,short_description,long_description,img, email }
 
         console.log(myWishlist);
-        fetch('https://hot-blogs-server-jlk8dgjgo-al-amin-rahims-projects.vercel.app/wishlist', {
+        fetch('https://hot-blogs-server.vercel.app/wishlist', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -59,7 +64,7 @@ const SingleBlog = ({ blog }) => {
                         <Link to={`/blogs/${_id}`}>
                             <div className="badge badge-outline font-bold p-5 text-[#FF3811] hover:text-white hover:bg-black">Details</div>
                         </Link>
-                        <div onClick={() => handleWishlist(blog)} className="badge badge-outline font-bold p-5 text-[#FF3811] hover:text-white hover:bg-black">Wishlist</div>
+                        <button onClick={() => handleWishlist(blog)} className="badge badge-outline font-bold p-5 text-[#FF3811] hover:text-white hover:bg-black">Wishlist</button>
                     </div>
                 </div>
             </motion.div>

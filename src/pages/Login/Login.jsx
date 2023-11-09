@@ -8,6 +8,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
 import { AuthContext } from '../../provider/AuthProvider';
 import toast from 'react-hot-toast';
+import axios from 'axios';
 
 const Login = () => {
 
@@ -24,8 +25,22 @@ const Login = () => {
         signInUser(email, password)
             .then(result => {
                 console.log(result.user);
-                toast.success('Successfully Logged In!!')
-                navigate(location?.state ? location.state : '/')
+
+                const loggedInUser = result.user;
+                console.log(loggedInUser);
+                const user = { email };
+                console.log('login page user', user);
+
+                axios.post('https://hot-blogs-server.vercel.app/jwt', user, { withCredentials: true })
+                    .then(res => {
+                        console.log(res.data);
+                        if (res.data?.success) {
+                            toast.success('Successfully Logged In!!')
+                            navigate(location?.state ? location.state : '/')
+                        }
+                    })
+
+
             })
             .catch(error => {
                 console.log(error);
